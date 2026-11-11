@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+/* Class-based dark mode for next-themes */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Smooth theme transitions */
+html {
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Smooth border and shadow transitions on interactive elements */
+*, *::before, *::after {
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Reset transition for things that shouldn't animate */
+input, textarea, select, button {
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease,
+              opacity 0.15s ease, box-shadow 0.15s ease;
+}
+
+:root {
+  color-scheme: light;
+  --font-sans: var(--font-geist-sans);
+  --score-track: #e5e7eb;
+  --score-fill: #9333ea;
+  --score-text: #111827;
+}
+
+.dark {
+  color-scheme: dark;
+  --score-track: #3f3f46;
+  --score-fill: #a855f7;
+  --score-text: #fafafa;
+
+  /* Premium dark-mode page surfaces */
+  --surface-base: #0c0a18;
+  --surface-alt:  #110e22;
+  --surface-card: #15122a;
+  --border-subtle: rgba(255,255,255,0.055);
+  --text-primary: #ede9f8;
+  --text-secondary: #9389b5;
+}
+
+body {
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar for dark mode */
+.dark ::-webkit-scrollbar {
+  width: 6px;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #18181b;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #3f3f46;
+  border-radius: 3px;
+}
+
+/* Focus ring */
+:focus-visible {
+  outline: 2px solid #9333ea;
+  outline-offset: 2px;
+}
+.dark :focus-visible {
+  outline-color: #a855f7;
+}
+
+/* Twemoji — inline emoji images */
+img.emoji {
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  vertical-align: -0.2em;
+  pointer-events: none;
+}
+
+/* Line clamp utility */
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
