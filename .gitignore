@@ -1,16 +1,5 @@
-# Compiled class file
+# ===== Java / Spring Boot =====
 *.class
-
-# Log file
-*.log
-
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
 *.jar
 *.war
 *.nar
@@ -18,7 +7,61 @@
 *.zip
 *.tar.gz
 *.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+.mtj.tmp/
+
+# Gradle
+.gradle/
+build/
+backend/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# IDE
+.idea/
+*.iml
+*.iws
+*.ipr
+.classpath
+.project
+.settings/
+
+# Spring Boot
+backend/src/main/resources/application-local.yml
+backend/src/main/resources/application-secret.yml
+
+# ===== Node / Next.js =====
+node_modules/
+.pnp
+.pnp.js
+
+# Next.js
+frontend/.next/
+frontend/out/
+
+# pnpm
+frontend/node_modules/
+
+# Production build
+frontend/build/
+
+# TypeScript
+*.tsbuildinfo
+frontend/next-env.d.ts
+
+# Env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
